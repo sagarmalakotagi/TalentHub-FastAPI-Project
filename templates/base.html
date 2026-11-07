@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}TalentHub{% endblock %}</title><link rel="stylesheet" href="{{ url_for('static',path='style.css') }}"></head><body>
+<nav class="nav"><a class="brand" href="/"> <span class="brand-icon">T</span> TalentHub</a><div class="nav-right">
+{% if current_user %}<span class="user">{{ current_user }} · {{ current_role|title }}</span><a href="/dashboard">Dashboard</a><a href="/logout">Logout</a>{% else %}<a href="/login">Login</a>{% endif %}</div></nav>
+<main class="container">{% if error %}<div class="alert error">{{ error }}</div>{% endif %}{% block content %}{% endblock %}</main>
+<footer>TalentHub · Campus Placement Management System</footer></body></html>
